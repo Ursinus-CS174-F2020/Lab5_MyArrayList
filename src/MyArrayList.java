@@ -7,8 +7,6 @@
  */
 public class MyArrayList<Item> {
     private static final int DEFAULT_CAPACITY = 10;
-    // get, indexOf, iterator, remove (index and object), set, add, toArray
-    
     private Object[] items; // Underlying array that holds everything
     private int N; // size of the arraylist
     
