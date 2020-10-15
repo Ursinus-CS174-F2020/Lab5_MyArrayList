@@ -10,18 +10,27 @@ public class MyArrayList<Item> {
     private Object[] items; // Underlying array that holds everything
     private int N; // size of the arraylist
     
+    /**
+     * Initialize an ArrayList object with a particular 
+     * starting capacity
+     * @param startSize Initial capacity of the array
+     */
     public MyArrayList(int startSize) {
         items = new Object[startSize];
         N = 0;
     }
+    /**
+     * Initialize an ArrayList object with the underlying array
+     * having the default capacity
+     */
     public MyArrayList() {
         this(DEFAULT_CAPACITY);
     }
     
     /**
      * Double the capacity of the underlying array by creating
-     * a new array and copying everything over that was there before
-     * up to N
+     * a new underlying array and copying everything over that 
+     * was there before up to N
      */
     private void doubleCapacity() {
         // TODO: Fill this in
@@ -84,7 +93,7 @@ public class MyArrayList<Item> {
     }
     
     /**
-     * Add an item to the end of an arraylist and update its size
+     * Add an item to the end of the list and update its size
      * TODO: Update this so that if there isn't enough space
      * in the underlying array, that it doubles the capacity of 
      * the array first (hint: use your doubleCapacity() method to do this)
@@ -104,13 +113,16 @@ public class MyArrayList<Item> {
     }
     
     /**
-     * Add an item to the middle of an arraylist at a specified index, and
+     * Add an item to the middle of the list at a specified index, and
      * move everything to the right of it over by one index.  Be sure
      * to double the capacity if needed
      * @param index The index at which to insert the element
      * @param item The element to insert
      */
     public void add(int index, Item item) {
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException();
+        }
         // TODO: Fill this in
     }
     
